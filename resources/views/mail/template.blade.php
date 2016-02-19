@@ -4,4 +4,4 @@
 
 <p>Att,</p>
 
-<p>I equip sendeemail.herokuapp.com</p>
+<p>team sendeemail.herokuapp.com</p>
