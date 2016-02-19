@@ -8,14 +8,14 @@ class EmailController extends Controller {
 
     public function send(Request $request, $to)
     {
+        $user = explode('@', $to)[0]];
+        Mail::send('mail.template', ['user' => $user], function ($m) use ($to) {
+            $m->from('contact@sendeemail.herokuapp.com', 'Your Application');
 
-        Mail::send('mail.template', ['user' => 'Admin'], function ($m) use ($to) {
-            $m->from('contact@sendmail.app', 'Your Application');
-
-            $m->to($to, 'User test')->subject('Your Reminder!');
+            $m->to($to, 'User test')->subject('Sendeemail app!');
         });
 
-        return view('end', ['user' => 'my friend', 'to' => $to]);
+        return view('end', ['user' => $user, 'to' => $to]);
 
     }
 
