@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('send/{to}', 'EmailController@send');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
