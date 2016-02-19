@@ -8,7 +8,7 @@ class EmailController extends Controller {
 
     public function send(Request $request, $to)
     {
-        $user = explode('@', $to)[0]];
+        $user = explode('@', $to)[0];
         Mail::send('mail.template', ['user' => $user], function ($m) use ($to) {
             $m->from('contact@sendeemail.herokuapp.com', 'Your Application');
 
